@@ -9,15 +9,27 @@ Primary Stack: **HTML5**, **CSS3**, and **Python (Flask)**.
 ## 🚀 Quick Start Guide
 
 ### 1. Run the Web Server
-In your terminal, navigate to the project directory and run:
+
+Open Command Prompt (CMD) or the VS Code terminal and navigate to the project folder:
 
 ```bash
-cd ~/.gemini/antigravity/scratch/project-recommender
-./run.sh
+cd path\to\project-recommender
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the Flask application:
+
+```bash
+python app.py
 ```
 
 ### 2. Open in Your Browser
-Visit:
-👉 **[http://127.0.0.1:5001](http://127.0.0.1:5001)**
 
-*(Note: We use port **5001** because macOS reserves port 5000 for Apple AirPlay Receiver).*
+Visit: http://127.0.0.1:5001
+
+*Note: Ensure that the Flask application is configured to run on port 5001.*
