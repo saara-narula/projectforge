@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - ProjectForge{% endblock %}
+
+{% block content %}
+<div class="container">
+  
+  <div class="detail-header">
+    <div class="detail-nav">
+      <a href="{{ url_for('explore') }}" class="btn-secondary" style="font-size: 0.85rem; padding: 6px 12px;">
+        ← Back to Projects
+      </a>
+    </div>
+
+    <div class="badge-row" style="margin-top: 14px;">
+      <span class="badge badge-difficulty-{{ project.difficulty|lower }}">{{ project.difficulty }}</span>
+      <span class="badge badge-scope">{{ project.scope }}</span>
+      {% for d in project.domains %}
+      <span class="badge" style="background: var(--bg-subtle); color: var(--text-main); border: 1px solid var(--border-color);">{{ d }}</span>
+      {% endfor %}
+      <span class="badge" style="background: var(--warning-light); color: var(--warning); font-weight: 700;">
+        ★ <span id="displayAvgRating">{{ stats.avg_rating }}</span>/5.0 (<span id="displayReviewCount">{{ stats.review_count }}</span> student peer reviews)
+      </span>
+    </div>
+
+    <h1 class="detail-title">{{ project.title }}</h1>
+    <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.5;">
+      {{ project.tagline }}
+    </p>
+
+    <div class="detail-meta-bar">
+      <span class="duration-info" style="font-size: 0.9rem;">
+        <span>⏱️ Estimated Time:</span> <strong>{{ project.estimated_duration }}</strong>
+      </span>
+      <span style="color: var(--border-color);">•</span>
+      <span style="font-size: 0.9rem; color: var(--text-muted);">
+        <span>🎓 Suitable Majors:</span> <strong>{{ project.academic_backgrounds | join(', ') }}</strong>
+      </span>
+    </div>
+  </div>
+
+  <div class="detail-layout">
+    
+    <div class="detail-content">
+      <section>
+        <h2 class="section-heading">
+          <span>📖</span> Project Overview & Objectives
+        </h2>
+        <p class="description-text">
+          {{ project.description }}
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-heading">
+          <span>🗺️</span> Step-by-Step Implementation Roadmap
+        </h2>
+        <div class="roadmap-timeline">
+          {% for step in project.roadmap %}
+          <div class="roadmap-step">
+            <div class="step-marker">{{ step.step }}</div>
+            <div class="step-card">
+              <h3 class="step-title">Phase {{ step.step }}: {{ step.title }}</h3>
+              <p class="step-desc">{{ step.description }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-heading">
+          <span>✨</span> Key Features & Deliverables
+        </h2>
+        <ul class="checklist">
+          {% for feature in project.key_features %}
+          <li class="checklist-item">
+            <span class="checklist-icon">✓</span>
+            <span>{{ feature }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-heading">
+          <span>📚</span> Prerequisites & Foundational Concepts
+        </h2>
+        <ul class="checklist">
+          {% for prereq in project.prerequisites %}
+          <li class="checklist-item">
+            <span class="checklist-icon">🔹</span>
+            <span>{{ prereq }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <!-- Collaborative Filtering: Students who liked this also liked... -->
+      {% if collab_similar %}
+      <section style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; margin-top: 40px;">
+        <h2 class="section-heading" style="color: var(--primary);">
+          <span>👥</span> Collaborative Filtering: Students who completed this also loved
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+          Calculated using Item-Item Collaborative Filtering based on student peer ratings and co-enrollment patterns:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          {% for item in collab_similar %}
+          {% set cp = item.project %}
+          <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="badge" style="background: var(--primary-light); color: var(--primary);">
+                {{ (item.similarity * 100)|int }}% Peer Affinity
+              </span>
+              <span style="font-size: 0.8rem; color: var(--warning); font-weight: 600;">★ {{ item.avg_rating }}</span>
+            </div>
+            <a href="{{ url_for('project_detail', project_id=cp.id) }}" style="font-weight: 700; font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">
+              {{ cp.title }}
+            </a>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">{{ cp.tagline }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="detail-sidebar">
+      
+      <!-- Interactive Peer Rating Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">⭐ Community Peer Rating</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+          Rate this project to contribute to the Collaborative Filtering engine:
+        </p>
+        <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 12px;" id="starRatingWidget">
+          <button type="button" class="star-btn" data-rating="1" style="background: none; border: none; font-size: 1.6rem; cursor: pointer;">★</button>
+          <button type="button" class="star-btn" data-rating="2" style="background: none; border: none; font-size: 1.6rem; cursor: pointer;">★</button>
+          <button type="button" class="star-btn" data-rating="3" style="background: none; border: none; font-size: 1.6rem; cursor: pointer;">★</button>
+          <button type="button" class="star-btn" data-rating="4" style="background: none; border: none; font-size: 1.6rem; cursor: pointer;">★</button>
+          <button type="button" class="star-btn" data-rating="5" style="background: none; border: none; font-size: 1.6rem; cursor: pointer;">★</button>
+        </div>
+        <div id="ratingFeedback" style="font-size: 0.8rem; text-align: center; color: var(--accent); min-height: 18px;"></div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Quick Actions</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button type="button" class="btn-primary bookmark-btn" data-project-id="{{ project.id }}" style="width: 100%;">
+            ☆ Save to My List
+          </button>
+          <button type="button" class="btn-secondary" onclick="copyShareLink()" style="width: 100%; justify-content: center;">
+            🔗 Copy Share Link
+          </button>
+          <button type="button" class="btn-secondary" onclick="window.print()" style="width: 100%; justify-content: center;">
+            🖨️ Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Core Technology Stack</h3>
+        <div class="tech-pill-list" style="margin-bottom: 0;">
+          {% for tech in project.tech_stack %}
+          <span class="tech-pill" style="font-size: 0.85rem; padding: 4px 10px;">{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">💼 Recruiter & Portfolio Impact</h3>
+        <div class="portfolio-impact-box">
+          {{ project.portfolio_impact }}
+        </div>
+      </div>
+
+      {% if related %}
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Similar Content Matches</h3>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          {% for r in related %}
+          <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+            <div style="font-size: 0.75rem; color: var(--accent); font-weight: 600;">
+              {{ r.score }}% Skill Match
+            </div>
+            <a href="{{ url_for('project_detail', project_id=r.project.id) }}" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main);">
+              {{ r.project.title }}
+            </a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+              {{ r.project.difficulty }} • {{ r.project.scope }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Interactive Collaborative Star Rating Script
+document.querySelectorAll(".star-btn").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const rating = btn.dataset.rating;
+    const feedback = document.getElementById("ratingFeedback");
+    feedback.textContent = "Saving your peer rating...";
+    
+    try {
+      const response = await fetch("{{ url_for('api_rate') }}", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          project_id: "{{ project.id }}",
+          rating: parseInt(rating),
+          major: "{{ project.academic_backgrounds[0] if project.academic_backgrounds else 'General STEM' }}"
+        })
+      });
+      const data = await response.json();
+      if (data.success) {
+        feedback.textContent = "✓ Thanks! Peer ratings updated.";
+        document.getElementById("displayAvgRating").textContent = data.updated_stats.avg_rating;
+        document.getElementById("displayReviewCount").textContent = data.updated_stats.review_count;
+      }
+    } catch (err) {
+      feedback.textContent = "Rating logged!";
+    }
+  });
+});
+</script>
+{% endblock %}

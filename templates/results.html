@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendations ({{ recommendations|length }}) - ProjectForge{% endblock %}
+
+{% block content %}
+<div class="container">
+  
+  <header class="results-header">
+    <div>
+      <div style="margin-bottom: 6px;">
+        <a href="{{ url_for('index') }}" class="btn-secondary" style="font-size: 0.85rem; padding: 6px 12px;">
+          ← Modify Preferences
+        </a>
+      </div>
+      <h1 class="results-title">
+        Top Recommended Projects
+      </h1>
+      <div class="query-summary-bar">
+        <span class="query-chip">Academic: <strong>{{ query.academic_background }}</strong></span>
+        {% if query.domains and query.domains != ['All Domains'] %}
+        <span class="query-chip">Domains: <strong>{{ query.domains | join(', ') }}</strong></span>
+        {% endif %}
+        {% if query.tech_stack and query.tech_stack != ['General / Any'] %}
+        <span class="query-chip">Skills: <strong>{{ query.tech_stack | join(', ') }}</strong></span>
+        {% endif %}
+        {% if query.difficulty != 'Any' %}
+        <span class="query-chip">Level: <strong>{{ query.difficulty }}</strong></span>
+        {% endif %}
+        {% if query.scope != 'Any' %}
+        <span class="query-chip">Scope: <strong>{{ query.scope }}</strong></span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div>
+      <span style="font-size: 0.95rem; color: var(--text-muted);">
+        Found <strong>{{ recommendations|length }}</strong> tailored matches
+      </span>
+    </div>
+  </header>
+
+  {% if recommendations %}
+  <div class="projects-grid">
+    {% for item in recommendations %}
+    {% set p = item.project %}
+    <div class="project-card">
+      <div>
+        <div class="project-card-header">
+          <div>
+            <div class="badge-row">
+              <span class="badge badge-difficulty-{{ p.difficulty|lower }}">{{ p.difficulty }}</span>
+              <span class="badge badge-scope">{{ p.scope }}</span>
+              {% if item.avg_rating %}
+              <span class="badge" style="background: var(--warning-light); color: var(--warning);">
+                ★ {{ item.avg_rating }} ({{ item.review_count }} peers)
+              </span>
+              {% endif %}
+            </div>
+            <h2 class="project-title">
+              <a href="{{ url_for('project_detail', project_id=p.id) }}">{{ p.title }}</a>
+            </h2>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+            <div class="match-score-badge {% if item.score >= 85 %}score-high{% elif item.score >= 70 %}score-med{% else %}score-fair{% endif %}" title="Hybrid Ensemble: {{ item.score }}% (Content-Based: {{ item.content_score }}% + Collaborative: {{ item.collaborative_score }}%)">
+              <span>{{ item.score }}%</span>
+              <span class="match-score-label">Hybrid Match</span>
+            </div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); white-space: nowrap;">
+              Content: <strong>{{ item.content_score }}%</strong> • Collab: <strong>{{ item.collaborative_score }}%</strong>
+            </div>
+          </div>
+        </div>
+
+        <p class="project-tagline">{{ p.tagline }}</p>
+
+        <div class="reasons-box">
+          <div class="reasons-title">
+            <span>💡</span> Why This Fits You:
+          </div>
+          <ul class="reasons-list">
+            {% for reason in item.match_reasons %}
+            <li>{{ reason }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div style="margin-bottom: 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); font-weight: 600;">
+          Technologies Involved:
+        </div>
+        <div class="tech-pill-list">
+          {% for tech in p.tech_stack %}
+            {% if tech in item.matched_skills %}
+            <span class="tech-pill matched" title="Matches your current skill">✓ {{ tech }}</span>
+            {% else %}
+            <span class="tech-pill" title="New skill you will learn">+ {{ tech }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="duration-info">
+          <span>⏱️</span> {{ p.estimated_duration }}
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" class="btn-secondary bookmark-btn" data-project-id="{{ p.id }}" style="padding: 6px 12px; font-size: 0.8rem;">
+            ☆ Save
+          </button>
+          <a href="{{ url_for('project_detail', project_id=p.id) }}" class="btn-primary view-btn" style="padding: 6px 14px; font-size: 0.85rem;">
+            Roadmap →
+          </a>
+        </div>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div style="text-align: center; padding: 60px 20px;">
+    <h3>No matching projects found</h3>
+    <p style="color: var(--text-muted); margin: 12px 0 24px;">Try loosening some of your filters or choosing 'Any' difficulty.</p>
+    <a href="{{ url_for('index') }}" class="btn-primary">Reset Preferences</a>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - ProjectForge{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 100px 24px;">
+  <div style="font-size: 4rem; margin-bottom: 16px;">🔭</div>
+  <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 12px;">404 - Project Not Found</h1>
+  <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto 28px;">
+    We couldn't find the page or project you were looking for.
+  </p>
+  <div style="display: flex; justify-content: center; gap: 12px;">
+    <a href="{{ url_for('index') }}" class="btn-primary">Back to Recommender</a>
+    <a href="{{ url_for('explore') }}" class="btn-secondary">Browse All Projects</a>
+  </div>
+</div>
+{% endblock %}

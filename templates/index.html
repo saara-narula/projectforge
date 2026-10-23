@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span>⚡ Hybrid Engine: Collaborative + Content-Based Filtering</span>
+    </div>
+    <h1 class="hero-title">
+      Discover Your Next <span class="text-gradient">Breakthrough Project</span>
+    </h1>
+    <p class="hero-subtitle">
+      Dual-powered recommendations blending <strong>Content-Based Filtering</strong> (skills, major, domains) with <strong>Collaborative Filtering</strong> (peer reviews, cohort ratings, co-completion trends).
+    </p>
+
+    <!-- Quick Start Presets -->
+    <div class="presets-section">
+      <div class="presets-label">⚡ Quick Fill Sample Profiles:</div>
+      <div class="presets-grid">
+        {% for preset in presets %}
+        <button type="button" 
+                class="preset-chip"
+                data-background="{{ preset.background }}"
+                data-domains='{{ preset.domains | tojson }}'
+                data-tech='{{ preset.tech | tojson }}'
+                data-difficulty="{{ preset.difficulty }}"
+                data-scope="{{ preset.scope }}"
+                data-interests="{{ preset.interests }}">
+          <span>💼</span> {{ preset.name }}
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="wizard-card">
+    <form id="recommendationForm" action="{{ url_for('recommend_view') }}" method="POST">
+      <div class="form-grid">
+        
+        <!-- Academic Background -->
+        <div class="form-group">
+          <label class="form-label" for="academicBackground">
+            <span>🎓</span> Academic Background / Major
+          </label>
+          <select name="academic_background" id="academicBackground" class="form-select" required>
+            <option value="" disabled selected>Select your discipline...</option>
+            {% for bg in metadata.academic_backgrounds %}
+            <option value="{{ bg }}">{{ bg }}</option>
+            {% endfor %}
+            <option value="General STEM / Other">Other / Self-Taught / Career Transition</option>
+          </select>
+          <span class="form-hint">Helps match domain difficulty and theoretical prerequisites.</span>
+        </div>
+
+        <!-- Experience & Difficulty -->
+        <div class="form-group">
+          <label class="form-label" for="difficultySelect">
+            <span>📊</span> Your Current Experience Level
+          </label>
+          <select name="difficulty" id="difficultySelect" class="form-select">
+            <option value="Any">Any Difficulty</option>
+            {% for diff in metadata.difficulties %}
+            <option value="{{ diff }}">{{ diff }}</option>
+            {% endfor %}
+          </select>
+          <span class="form-hint">Beginner (fundamentals), Intermediate (end-to-end), Advanced (research/systems).</span>
+        </div>
+
+        <!-- Target Domains (Multi-Select) -->
+        <div class="form-group full-width">
+          <label class="form-label">
+            <span>🌐</span> Target Domains of Interest <span class="form-hint">(Select 1 or more)</span>
+          </label>
+          <div class="tag-selector-cloud">
+            {% for domain in metadata.domains %}
+            <label class="tag-checkbox-label">
+              <input type="checkbox" name="domains" value="{{ domain }}">
+              <span>{{ domain }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Technologies (Categorized with live search) -->
+        <div class="form-group full-width">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+            <label class="form-label">
+              <span>💻</span> Technologies You Know or Want to Use ({{ metadata.tech_stack|length }}+ Technologies)
+            </label>
+            <input type="text" id="techFilterInput" placeholder="Quick filter (e.g. React, Docker, PyTorch)..." style="padding: 6px 12px; font-size: 0.825rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); outline: none; width: 240px;">
+          </div>
+
+          {% if metadata.categorized_tech %}
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 10px;">
+            {% for category, techs in metadata.categorized_tech.items() %}
+            <div class="tech-category-group">
+              <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 6px;">
+                {{ category }}
+              </div>
+              <div class="tag-selector-cloud" style="max-height: none; overflow: visible;">
+                {% for tech in techs %}
+                <label class="tag-checkbox-label tech-item" data-tech-name="{{ tech|lower }}">
+                  <input type="checkbox" name="tech_stack" value="{{ tech }}">
+                  <span>{{ tech }}</span>
+                </label>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="tag-selector-cloud">
+            {% for tech in metadata.tech_stack %}
+            <label class="tag-checkbox-label tech-item" data-tech-name="{{ tech|lower }}">
+              <input type="checkbox" name="tech_stack" value="{{ tech }}">
+              <span>{{ tech }}</span>
+            </label>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div style="margin-top: 12px;">
+            <input type="text" name="tech_custom" class="form-input" placeholder="Type any other custom technologies (comma-separated, e.g. Elixir, Svelte, WebRTC, eBPF)...">
+          </div>
+        </div>
+
+        <!-- Project Scope / Goal -->
+        <div class="form-group">
+          <label class="form-label" for="scopeSelect">
+            <span>🎯</span> Intended Project Purpose
+          </label>
+          <select name="scope" id="scopeSelect" class="form-select">
+            <option value="Any">Any Scope</option>
+            {% for sc in metadata.scopes %}
+            <option value="{{ sc }}">{{ sc }}</option>
+            {% endfor %}
+          </select>
+          <span class="form-hint">Portfolio Booster, Capstone Final Year, Hackathon sprint, etc.</span>
+        </div>
+
+        <!-- Specific Keywords or Interests -->
+        <div class="form-group">
+          <label class="form-label" for="interestsInput">
+            <span>🔍</span> Specific Themes & Keywords
+          </label>
+          <input type="text" name="interests" id="interestsInput" class="form-input" placeholder="e.g. healthcare, trading, automation, privacy, speech, climate...">
+          <span class="form-hint">Processed with TF-IDF cosine similarity against project descriptions.</span>
+        </div>
+
+        <!-- Hidden default hybrid mode (collaborative + content-based) -->
+        <input type="hidden" name="algorithm_mode" value="hybrid">
+
+        <!-- Submit Button -->
+        <div class="form-group full-width" style="text-align: center; margin-top: 16px;">
+          <button type="submit" class="btn-primary" style="min-width: 260px;">
+            <span>✨</span> Generate Personalized Recommendations
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

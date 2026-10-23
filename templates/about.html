@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}How It Works - Hybrid: Collaborative & Content-Based Architecture{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 900px; padding: 50px 24px;">
+  
+  <div style="text-align: center; margin-bottom: 40px;">
+    <span class="hero-badge">⚡ Dual-Engine Hybrid Intelligence</span>
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin-top: 10px;">
+      Collaborative & Content-Based Hybrid Engine
+    </h1>
+    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 680px; margin: 12px auto 0;">
+      ProjectForge simultaneously computes <strong>Content-Based Filtering</strong> and <strong>Collaborative Filtering</strong> into a unified 50/50 ensemble to maximize both personal skill relevance and community peer validation.
+    </p>
+  </div>
+
+  <!-- Content-Based Section -->
+  <div class="wizard-card" style="padding: 32px; margin-bottom: 30px;">
+    <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--primary);">
+      1. Content-Based Filtering (50% Weight)
+    </h2>
+    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+      Evaluates the intrinsic properties, prerequisites, and semantic relevance of each project against your selected profile:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 10px;">
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px;">
+        <div style="font-weight: 700; color: var(--primary);">Domain Alignment (25%)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Matches your target industry fields (AI, Web, Cyber, Robotics, FinTech).</p>
+      </div>
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px;">
+        <div style="font-weight: 700; color: var(--secondary);">Tech Stack Jaccard (25%)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Calculates overlap with your existing skills while identifying growth skills.</p>
+      </div>
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px;">
+        <div style="font-weight: 700; color: var(--accent);">Academic Discipline (18%)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Validates major compatibility heuristics and degree prerequisites.</p>
+      </div>
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px;">
+        <div style="font-weight: 700; color: var(--warning);">Difficulty & Scope (17%)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Matches experience level (Beginner/Intermediate/Advanced) and timeline.</p>
+      </div>
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px;">
+        <div style="font-weight: 700; color: #8b5cf6;">TF-IDF Semantics (15%)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Cosine similarity over term-frequency vectors on custom interest keywords.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Collaborative Filtering Section -->
+  <div class="wizard-card" style="padding: 32px; margin-bottom: 30px;">
+    <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--secondary);">
+      2. Collaborative Filtering (50% Weight)
+    </h2>
+    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+      Harnesses collective community wisdom from peer ratings and student interaction patterns:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">👥 User-Based Peer Cohorts</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          Groups students by degree program and prior project ratings. If students in your major rated a project 5 stars, it receives an elevated cohort recommendation score.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">🔗 Item-Item Co-Rating Matrix</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          Computes pairwise cosine similarity between project rating vectors. Powers the <em>"Students who completed this project also loved..."</em> section on every project page.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Hybrid Wins -->
+  <div class="wizard-card" style="padding: 32px; margin-bottom: 30px;">
+    <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;">
+      Why Combining Collaborative & Content-Based Filtering Wins
+    </h2>
+    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+      <strong>Pure collaborative filtering</strong> struggles with the <em>Cold-Start Problem</em> (unrated projects are never recommended). Meanwhile, <strong>pure content-based filtering</strong> suffers from over-specialization and cannot gauge whether students actually enjoyed building the project.
+    </p>
+    <p style="color: var(--text-muted); line-height: 1.7;">
+      By executing both models in parallel and fusing their normalized scores into a unified <strong>Hybrid Ensemble</strong>, ProjectForge ensures every suggested project has the exact technical depth you need while bubbling up the most rewarding, peer-approved projects.
+    </p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('index') }}" class="btn-primary" style="padding: 12px 24px;">
+      Try the Hybrid Recommender Now →
+    </a>
+  </div>
+
+</div>
+{% endblock %}

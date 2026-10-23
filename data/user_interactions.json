@@ -1,0 +1,541 @@
+[
+  {
+    "user_id": "student_01",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5,
+    "timestamp": "2026-09-10"
+  },
+  {
+    "user_id": "student_01",
+    "major": "Computer Science",
+    "project_id": "rag-document-qna-knowledge-assistant",
+    "rating": 5,
+    "timestamp": "2026-09-12"
+  },
+  {
+    "user_id": "student_01",
+    "major": "Computer Science",
+    "project_id": "ai-fitness-pose-correction",
+    "rating": 4,
+    "timestamp": "2026-09-15"
+  },
+  {
+    "user_id": "student_01",
+    "major": "Computer Science",
+    "project_id": "fake-news-misinformation-detector",
+    "rating": 4,
+    "timestamp": "2026-09-18"
+  },
+  {
+    "user_id": "student_02",
+    "major": "Computer Science",
+    "project_id": "realtime-collaborative-code-editor",
+    "rating": 5,
+    "timestamp": "2026-09-11"
+  },
+  {
+    "user_id": "student_02",
+    "major": "Computer Science",
+    "project_id": "fullstack-react-fastapi-saas",
+    "rating": 5,
+    "timestamp": "2026-09-14"
+  },
+  {
+    "user_id": "student_02",
+    "major": "Computer Science",
+    "project_id": "distributed-key-value-store-raft",
+    "rating": 5,
+    "timestamp": "2026-09-18"
+  },
+  {
+    "user_id": "student_02",
+    "major": "Computer Science",
+    "project_id": "cloud-native-k8s-canary-controller",
+    "rating": 4,
+    "timestamp": "2026-09-22"
+  },
+  {
+    "user_id": "student_03",
+    "major": "Data Science & AI",
+    "project_id": "algorithmic-crypto-trading-bot",
+    "rating": 5,
+    "timestamp": "2026-09-12"
+  },
+  {
+    "user_id": "student_03",
+    "major": "Data Science & AI",
+    "project_id": "kafka-spark-stream-analytics",
+    "rating": 5,
+    "timestamp": "2026-09-16"
+  },
+  {
+    "user_id": "student_03",
+    "major": "Data Science & AI",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 4,
+    "timestamp": "2026-09-20"
+  },
+  {
+    "user_id": "student_03",
+    "major": "Data Science & AI",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5,
+    "timestamp": "2026-09-24"
+  },
+  {
+    "user_id": "student_04",
+    "major": "Electrical & Electronics",
+    "project_id": "smart-home-iot-energy-monitor",
+    "rating": 5,
+    "timestamp": "2026-09-13"
+  },
+  {
+    "user_id": "student_04",
+    "major": "Electrical & Electronics",
+    "project_id": "autonomous-robot-slam-pathfinding",
+    "rating": 5,
+    "timestamp": "2026-09-17"
+  },
+  {
+    "user_id": "student_04",
+    "major": "Electrical & Electronics",
+    "project_id": "ai-fitness-pose-correction",
+    "rating": 4,
+    "timestamp": "2026-09-21"
+  },
+  {
+    "user_id": "student_05",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "network-packet-sniffer-ids",
+    "rating": 5,
+    "timestamp": "2026-09-15"
+  },
+  {
+    "user_id": "student_05",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "vulnerability-scanner-security-auditor",
+    "rating": 5,
+    "timestamp": "2026-09-19"
+  },
+  {
+    "user_id": "student_05",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "decentralized-micro-lending-solidity",
+    "rating": 4,
+    "timestamp": "2026-09-23"
+  },
+  {
+    "user_id": "student_06",
+    "major": "Computer Science",
+    "project_id": "rag-document-qna-knowledge-assistant",
+    "rating": 5,
+    "timestamp": "2026-09-14"
+  },
+  {
+    "user_id": "student_06",
+    "major": "Computer Science",
+    "project_id": "fake-news-misinformation-detector",
+    "rating": 4,
+    "timestamp": "2026-09-18"
+  },
+  {
+    "user_id": "student_06",
+    "major": "Computer Science",
+    "project_id": "smart-resume-matcher-ats-optimizer",
+    "rating": 5,
+    "timestamp": "2026-09-22"
+  },
+  {
+    "user_id": "student_06",
+    "major": "Computer Science",
+    "project_id": "realtime-collaborative-code-editor",
+    "rating": 4,
+    "timestamp": "2026-09-25"
+  },
+  {
+    "user_id": "student_07",
+    "major": "Software Engineering",
+    "project_id": "fullstack-react-fastapi-saas",
+    "rating": 5,
+    "timestamp": "2026-09-16"
+  },
+  {
+    "user_id": "student_07",
+    "major": "Software Engineering",
+    "project_id": "cloud-native-k8s-canary-controller",
+    "rating": 5,
+    "timestamp": "2026-09-20"
+  },
+  {
+    "user_id": "student_07",
+    "major": "Software Engineering",
+    "project_id": "realtime-collaborative-code-editor",
+    "rating": 4,
+    "timestamp": "2026-09-24"
+  },
+  {
+    "user_id": "student_07",
+    "major": "Software Engineering",
+    "project_id": "distributed-key-value-store-raft",
+    "rating": 5,
+    "timestamp": "2026-09-28"
+  },
+  {
+    "user_id": "student_08",
+    "major": "Data Science & AI",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5,
+    "timestamp": "2026-09-17"
+  },
+  {
+    "user_id": "student_08",
+    "major": "Data Science & AI",
+    "project_id": "fake-news-misinformation-detector",
+    "rating": 4,
+    "timestamp": "2026-09-21"
+  },
+  {
+    "user_id": "student_08",
+    "major": "Data Science & AI",
+    "project_id": "smart-resume-matcher-ats-optimizer",
+    "rating": 5,
+    "timestamp": "2026-09-25"
+  },
+  {
+    "user_id": "student_08",
+    "major": "Data Science & AI",
+    "project_id": "kafka-spark-stream-analytics",
+    "rating": 5,
+    "timestamp": "2026-09-29"
+  },
+  {
+    "user_id": "student_09",
+    "major": "Computer Science",
+    "project_id": "cloud-native-k8s-canary-controller",
+    "rating": 5,
+    "timestamp": "2026-09-18"
+  },
+  {
+    "user_id": "student_09",
+    "major": "Computer Science",
+    "project_id": "distributed-key-value-store-raft",
+    "rating": 5,
+    "timestamp": "2026-09-22"
+  },
+  {
+    "user_id": "student_09",
+    "major": "Computer Science",
+    "project_id": "kafka-spark-stream-analytics",
+    "rating": 4,
+    "timestamp": "2026-09-26"
+  },
+  {
+    "user_id": "student_09",
+    "major": "Computer Science",
+    "project_id": "network-packet-sniffer-ids",
+    "rating": 4,
+    "timestamp": "2026-09-30"
+  },
+  {
+    "user_id": "student_10",
+    "major": "Information Technology",
+    "project_id": "cross-platform-flutter-eco-tracker",
+    "rating": 5,
+    "timestamp": "2026-09-19"
+  },
+  {
+    "user_id": "student_10",
+    "major": "Information Technology",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 5,
+    "timestamp": "2026-09-23"
+  },
+  {
+    "user_id": "student_10",
+    "major": "Information Technology",
+    "project_id": "smart-resume-matcher-ats-optimizer",
+    "rating": 4,
+    "timestamp": "2026-09-27"
+  },
+  {
+    "user_id": "student_10",
+    "major": "Information Technology",
+    "project_id": "fullstack-react-fastapi-saas",
+    "rating": 4,
+    "timestamp": "2026-09-30"
+  },
+  {
+    "user_id": "student_11",
+    "major": "Computer Science",
+    "project_id": "decentralized-micro-lending-solidity",
+    "rating": 5,
+    "timestamp": "2026-09-20"
+  },
+  {
+    "user_id": "student_11",
+    "major": "Computer Science",
+    "project_id": "algorithmic-crypto-trading-bot",
+    "rating": 5,
+    "timestamp": "2026-09-24"
+  },
+  {
+    "user_id": "student_11",
+    "major": "Computer Science",
+    "project_id": "vulnerability-scanner-security-auditor",
+    "rating": 4,
+    "timestamp": "2026-09-27"
+  },
+  {
+    "user_id": "student_12",
+    "major": "Mechatronics & Robotics",
+    "project_id": "autonomous-robot-slam-pathfinding",
+    "rating": 5,
+    "timestamp": "2026-09-21"
+  },
+  {
+    "user_id": "student_12",
+    "major": "Mechatronics & Robotics",
+    "project_id": "smart-home-iot-energy-monitor",
+    "rating": 5,
+    "timestamp": "2026-09-25"
+  },
+  {
+    "user_id": "student_12",
+    "major": "Mechatronics & Robotics",
+    "project_id": "ai-fitness-pose-correction",
+    "rating": 4,
+    "timestamp": "2026-09-28"
+  },
+  {
+    "user_id": "student_13",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "vulnerability-scanner-security-auditor",
+    "rating": 5,
+    "timestamp": "2026-09-22"
+  },
+  {
+    "user_id": "student_13",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "network-packet-sniffer-ids",
+    "rating": 5,
+    "timestamp": "2026-09-26"
+  },
+  {
+    "user_id": "student_13",
+    "major": "Cybersecurity & Information Security",
+    "project_id": "distributed-key-value-store-raft",
+    "rating": 4,
+    "timestamp": "2026-09-29"
+  },
+  {
+    "user_id": "student_14",
+    "major": "Data Science & AI",
+    "project_id": "kafka-spark-stream-analytics",
+    "rating": 5,
+    "timestamp": "2026-09-23"
+  },
+  {
+    "user_id": "student_14",
+    "major": "Data Science & AI",
+    "project_id": "rag-document-qna-knowledge-assistant",
+    "rating": 5,
+    "timestamp": "2026-09-27"
+  },
+  {
+    "user_id": "student_14",
+    "major": "Data Science & AI",
+    "project_id": "algorithmic-crypto-trading-bot",
+    "rating": 4,
+    "timestamp": "2026-09-30"
+  },
+  {
+    "user_id": "student_15",
+    "major": "Software Engineering",
+    "project_id": "realtime-collaborative-code-editor",
+    "rating": 5,
+    "timestamp": "2026-09-24"
+  },
+  {
+    "user_id": "student_15",
+    "major": "Software Engineering",
+    "project_id": "cloud-native-k8s-canary-controller",
+    "rating": 5,
+    "timestamp": "2026-09-28"
+  },
+  {
+    "user_id": "student_15",
+    "major": "Software Engineering",
+    "project_id": "cross-platform-flutter-eco-tracker",
+    "rating": 4,
+    "timestamp": "2026-10-02"
+  },
+  {
+    "user_id": "student_16",
+    "major": "Computer Science",
+    "project_id": "cross-platform-flutter-eco-tracker",
+    "rating": 5,
+    "timestamp": "2026-10-01"
+  },
+  {
+    "user_id": "student_16",
+    "major": "Computer Science",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 4,
+    "timestamp": "2026-10-04"
+  },
+  {
+    "user_id": "student_16",
+    "major": "Computer Science",
+    "project_id": "ai-fitness-pose-correction",
+    "rating": 5,
+    "timestamp": "2026-10-07"
+  },
+  {
+    "user_id": "student_17",
+    "major": "Biomedical Engineering",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5,
+    "timestamp": "2026-10-03"
+  },
+  {
+    "user_id": "student_17",
+    "major": "Biomedical Engineering",
+    "project_id": "ai-fitness-pose-correction",
+    "rating": 5,
+    "timestamp": "2026-10-06"
+  },
+  {
+    "user_id": "student_17",
+    "major": "Biomedical Engineering",
+    "project_id": "rag-document-qna-knowledge-assistant",
+    "rating": 4,
+    "timestamp": "2026-10-09"
+  },
+  {
+    "user_id": "student_18",
+    "major": "Electrical & Electronics",
+    "project_id": "smart-home-iot-energy-monitor",
+    "rating": 5,
+    "timestamp": "2026-10-04"
+  },
+  {
+    "user_id": "student_18",
+    "major": "Electrical & Electronics",
+    "project_id": "autonomous-robot-slam-pathfinding",
+    "rating": 5,
+    "timestamp": "2026-10-08"
+  },
+  {
+    "user_id": "student_18",
+    "major": "Electrical & Electronics",
+    "project_id": "network-packet-sniffer-ids",
+    "rating": 4,
+    "timestamp": "2026-10-11"
+  },
+  {
+    "user_id": "student_19",
+    "major": "Information Technology",
+    "project_id": "vulnerability-scanner-security-auditor",
+    "rating": 5,
+    "timestamp": "2026-10-05"
+  },
+  {
+    "user_id": "student_19",
+    "major": "Information Technology",
+    "project_id": "network-packet-sniffer-ids",
+    "rating": 5,
+    "timestamp": "2026-10-09"
+  },
+  {
+    "user_id": "student_19",
+    "major": "Information Technology",
+    "project_id": "decentralized-micro-lending-solidity",
+    "rating": 4,
+    "timestamp": "2026-10-12"
+  },
+  {
+    "user_id": "student_20",
+    "major": "Finance & Economics",
+    "project_id": "algorithmic-crypto-trading-bot",
+    "rating": 5,
+    "timestamp": "2026-10-06"
+  },
+  {
+    "user_id": "student_20",
+    "major": "Finance & Economics",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 5,
+    "timestamp": "2026-10-10"
+  },
+  {
+    "user_id": "student_20",
+    "major": "Finance & Economics",
+    "project_id": "decentralized-micro-lending-solidity",
+    "rating": 5,
+    "timestamp": "2026-10-13"
+  },
+  {
+    "user_id": "web_user_69",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_70",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_71",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_72",
+    "major": "Computer Science",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 5.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_73",
+    "major": "Computer Science",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 4.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_74",
+    "major": "Computer Science",
+    "project_id": "personal-finance-expense-tracker-insights",
+    "rating": 3.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_75",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 3.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_76",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 2.0,
+    "timestamp": "2026-10-16"
+  },
+  {
+    "user_id": "web_user_77",
+    "major": "Computer Science",
+    "project_id": "medical-imaging-diagnostic-cad",
+    "rating": 5.0,
+    "timestamp": "2026-10-16"
+  }
+]

@@ -1,0 +1,531 @@
+[
+  {
+    "id": "medical-imaging-diagnostic-cad",
+    "title": "AI Medical Image Diagnostics Assistant",
+    "tagline": "Deep learning system for classifying pulmonary abnormalities from chest X-rays with Grad-CAM visual explainability.",
+    "description": "An end-to-end computer vision healthcare application that analyzes radiograph images (such as pneumonia or tuberculosis) using transfer learning with DenseNet/ResNet, outputs probability heatmaps using Grad-CAM, and provides a web dashboard for medical practitioners.",
+    "academic_backgrounds": ["Computer Science", "Data Science & AI", "Biomedical Engineering", "Information Technology"],
+    "domains": ["Artificial Intelligence", "Computer Vision", "Healthcare & BioTech"],
+    "tech_stack": ["Python", "PyTorch", "OpenCV", "Flask", "HTML", "CSS", "NumPy", "Docker"],
+    "difficulty": "Intermediate",
+    "scope": "Capstone Project",
+    "estimated_duration": "4-6 weeks",
+    "prerequisites": ["Convolutional Neural Networks (CNNs)", "Python & PyTorch basics", "Basic image preprocessing"],
+    "key_features": [
+      "Multi-label chest X-ray classification with 90%+ AUROC",
+      "Grad-CAM visual heatmap generation highlighting pathological regions",
+      "Interactive radiologist portal for drag-and-drop DICOM/PNG uploads",
+      "Automated summary report generation with PDF export",
+      "Inference latency tracking and confidence interval thresholds"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Data Pipeline", "description": "Download and preprocess NIH ChestX-ray or CheXpert dataset with data augmentation."},
+      {"step": 2, "title": "Model Training", "description": "Fine-tune pretrained DenseNet-121 using weighted cross-entropy loss to handle class imbalance."},
+      {"step": 3, "title": "Explainability Engine", "description": "Implement Grad-CAM to produce saliency maps showing which image patches triggered the prediction."},
+      {"step": 4, "title": "Web Interface & API", "description": "Build a Flask REST API and responsive HTML/CSS dashboard for clinicians to test images."},
+      {"step": 5, "title": "Evaluation & Testing", "description": "Benchmark ROC-AUC, sensitivity, specificity, and write comprehensive clinical evaluation metrics."}
+    ],
+    "portfolio_impact": "Demonstrates high-level mastery of both deep learning fundamentals and ethical AI explainability in high-stakes domains.",
+    "tags": ["healthcare", "radiology", "deep-learning", "pytorch", "grad-cam", "computer-vision"]
+  },
+  {
+    "id": "realtime-collaborative-code-editor",
+    "title": "Real-Time Collaborative Code Editor & Runner",
+    "tagline": "Multi-user web-based IDE with synchronized live editing, syntax highlighting, and secure sandbox execution.",
+    "description": "A Google Docs-style collaborative programming workspace where multiple developers can concurrently write, debug, and execute code in real-time. Employs WebSockets for low-latency synchronization, Redis pub/sub, and sandboxed Docker execution.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Software Engineering"],
+    "domains": ["Web Development", "Cloud & Distributed Systems", "Developer Tools"],
+    "tech_stack": ["Python", "JavaScript", "TypeScript", "WebSockets", "Flask", "Redis", "Docker", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "3-5 weeks",
+    "prerequisites": ["Client-server architecture", "WebSockets / Event-driven programming", "Basic Linux containerization"],
+    "key_features": [
+      "Operational Transformation or CRDT-based multi-cursor live synchronization",
+      "In-browser syntax highlighting and line-number gutter",
+      "Sandboxed isolated code execution container preventing malicious scripts",
+      "Sharable room links with participant presence indicators and role permissions",
+      "Built-in chat sidebar and code revision snapshot history"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Frontend Workspace Setup", "description": "Create responsive HTML/CSS code editor layout with line numbers, status bar, and toolbar."},
+      {"step": 2, "title": "WebSocket Sync Server", "description": "Implement Python WebSocket server managing room state, cursor broadcasts, and text diff updates."},
+      {"step": 3, "title": "Execution Engine", "description": "Develop a lightweight containerized runner executing Python code with strict timeouts and resource limits."},
+      {"step": 4, "title": "Multiplayer Features", "description": "Add color-coded cursor avatars, live terminal output streaming, and chat panel."},
+      {"step": 5, "title": "Deployment & Stress Testing", "description": "Test concurrent socket connections and optimize message payloads."}
+    ],
+    "portfolio_impact": "Showcases advanced full-stack systems engineering, distributed state synchronization, and security-conscious code execution.",
+    "tags": ["collaboration", "websockets", "ide", "editor", "distributed-systems", "fullstack", "redis"]
+  },
+  {
+    "id": "rag-document-qna-knowledge-assistant",
+    "title": "Private Local RAG & Document Knowledge Engine",
+    "tagline": "Retrieval-Augmented Generation system using local LLMs (Ollama) and LangChain for querying PDFs with zero data leakage.",
+    "description": "An intelligent private document knowledge base that runs 100% locally on your computer. Ingests research papers and manuals, extracts text, generates vector embeddings with ChromaDB, and performs dense semantic search to answer questions with verifiable paragraph citations.",
+    "academic_backgrounds": ["Computer Science", "Data Science & AI", "Information Technology", "Computational Linguistics"],
+    "domains": ["Natural Language Processing", "Artificial Intelligence", "Information Retrieval"],
+    "tech_stack": ["Python", "LangChain", "Ollama", "ChromaDB", "FastAPI", "Flask", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "3-5 weeks",
+    "prerequisites": ["Vector embeddings", "Text tokenization & chunking", "Cosine similarity", "Prompt engineering"],
+    "key_features": [
+      "Semantic text chunking with sliding window and metadata preservation (page numbers, section titles)",
+      "Dense vector search using sentence-transformers and ChromaDB index",
+      "Private local LLM integration via Ollama without requiring paid cloud API keys",
+      "Grounded answer generation with direct citation highlights pointing to source passages",
+      "Clean document upload management interface with drag-and-drop support"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Document Pipeline", "description": "Build ingestion pipeline extracting text, tables, and page metadata into structured chunks."},
+      {"step": 2, "title": "Embedding Indexing", "description": "Generate embeddings with sentence-transformers and index them using ChromaDB."},
+      {"step": 3, "title": "Hybrid Retrieval Engine", "description": "Filter top-K nearest document passages relevant to user questions."},
+      {"step": 4, "title": "Answer Synthesis", "description": "Format prompt context with citations and generate verifiable summaries via Ollama."},
+      {"step": 5, "title": "User Interface", "description": "Build an intuitive chat view with document explorer, search filters, and source citations."}
+    ],
+    "portfolio_impact": "Directly targets the highest-demand engineering skillset in modern Generative AI, RAG architecture, and enterprise search.",
+    "tags": ["rag", "llm", "langchain", "ollama", "chromadb", "nlp", "vector-search"]
+  },
+  {
+    "id": "algorithmic-crypto-trading-bot",
+    "title": "Quantitative Algorithmic Trading Platform & Backtester",
+    "tagline": "Backtesting engine and automated trading bot executing statistical arbitrage and momentum strategies on market tick data.",
+    "description": "An end-to-end algorithmic trading platform that connects to public market data APIs, processes historical order book data, backtests custom momentum & mean-reversion strategies, and simulates paper trading with real-time performance analytics.",
+    "academic_backgrounds": ["Computer Science", "Data Science & AI", "Finance & Economics", "Mathematics & Statistics"],
+    "domains": ["FinTech", "Data Science & Analytics", "Financial Engineering"],
+    "tech_stack": ["Python", "Pandas", "NumPy", "Matplotlib", "Flask", "PostgreSQL", "HTML", "CSS"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "5-7 weeks",
+    "prerequisites": ["Time-series analysis", "Financial indicators (RSI, MACD, Bollinger Bands)", "REST/WebSocket APIs"],
+    "key_features": [
+      "Event-driven historical backtester modeling slippage and maker/taker fee structures",
+      "Real-time WebSocket market data ingester and order-book depth tracker",
+      "Strategy formulation engine (EMA crossovers, Mean Reversion, Mean-Variance Optimization)",
+      "Interactive web dashboard displaying Sharpe Ratio, Maximum Drawdown, and Cumulative PnL charts",
+      "Paper-trading simulator with automated risk stop-loss and position sizing rules"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Data Ingestion Module", "description": "Fetch OHLCV historical candlestick data via exchange APIs and store in PostgreSQL."},
+      {"step": 2, "title": "Strategy & Signal Framework", "description": "Code modular technical indicators (EMA, MACD, ATR, RSI) using vectorised NumPy/Pandas operations."},
+      {"step": 3, "title": "Backtest Simulation Engine", "description": "Build an event loop that simulates trade execution, transaction friction, and calculates equity curves."},
+      {"step": 4, "title": "Flask Analytics Dashboard", "description": "Build interactive HTML/CSS charts showing risk-adjusted return metrics, drawdown curves, and trade logs."},
+      {"step": 5, "title": "Live Paper Trading Loop", "description": "Connect to live order feeds to execute paper orders in real-time with automated kill-switches."}
+    ],
+    "portfolio_impact": "Exceptional showcase for quantitative finance, hedge fund analyst, and fintech backend engineering roles.",
+    "tags": ["fintech", "trading", "crypto", "time-series", "pandas", "backtesting", "postgresql"]
+  },
+  {
+    "id": "smart-home-iot-energy-monitor",
+    "title": "Smart IoT Home Energy Audit & Optimization Hub",
+    "tagline": "IoT-enabled smart monitoring system measuring appliance energy consumption with anomaly detection and predictive savings.",
+    "description": "A hardware-software IoT project that captures power consumption metrics from smart meters or microcontrollers (ESP32 / Raspberry Pi), detects standby vampire power leakage using time-series anomaly detection, and gives homeowners actionable recommendations via a dashboard.",
+    "academic_backgrounds": ["Electrical & Electronics", "Computer Science", "Mechatronics & Robotics", "Information Technology"],
+    "domains": ["Internet of Things (IoT)", "Embedded Systems", "Green Tech & Sustainability"],
+    "tech_stack": ["Python", "MQTT", "ESP32", "Raspberry Pi", "Flask", "SQLite", "C++", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Capstone Project",
+    "estimated_duration": "4-6 weeks",
+    "prerequisites": ["Microcontroller fundamentals (ESP32 / Arduino / RPi)", "MQTT protocol", "Basic statistical anomaly detection"],
+    "key_features": [
+      "Lightweight MQTT telemetry broker receiving voltage, current, and watt-hour readings",
+      "Appliance fingerprinting identifying high-consumption devices based on wattage curves",
+      "Dynamic cost calculation based on peak vs. off-peak utility tariffs",
+      "Threshold alert notification system for current spikes and equipment malfunctions",
+      "Modern dashboard with energy usage breakdowns and carbon footprint metrics"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Sensor & Telemetry Setup", "description": "Simulate or wire current sensors (ACS712) to an ESP32 publishing readings over MQTT."},
+      {"step": 2, "title": "Python Ingest Service", "description": "Build a background daemon listening to MQTT topics and logging metrics into an indexed SQLite database."},
+      {"step": 3, "title": "Anomaly Detection Algorithm", "description": "Write moving average and Z-score algorithms in Python to flag anomalous energy spikes."},
+      {"step": 4, "title": "Energy Analytics Web App", "description": "Design an HTML/CSS interface with gauge cards, daily consumption charts, and energy-saving tips."},
+      {"step": 5, "title": "Automation & Webhooks", "description": "Integrate webhook triggers to automatically signal smart relays when power limits are exceeded."}
+    ],
+    "portfolio_impact": "Bridges physical hardware engineering with cloud software and sustainability analytics.",
+    "tags": ["iot", "energy", "mqtt", "esp32", "raspberry-pi", "sustainability", "embedded-systems"]
+  },
+  {
+    "id": "distributed-key-value-store-raft",
+    "title": "Distributed Fault-Tolerant Key-Value Store with Raft",
+    "tagline": "High-throughput distributed consensus storage engine inspired by etcd, implementing leader election and log replication.",
+    "description": "A systems programming project implementing the Raft consensus algorithm. Manages a cluster of peer nodes that elect a leader, replicate write-ahead transaction logs, achieve quorum consistency, and survive node failures without downtime.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Software Engineering"],
+    "domains": ["Cloud & Distributed Systems", "Systems Programming", "Developer Tools"],
+    "tech_stack": ["Go", "Python", "gRPC", "Docker", "Prometheus", "HTML", "CSS"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "6-8 weeks",
+    "prerequisites": ["Network sockets & RPC mechanics", "State machines & concurrency primitives", "Distributed systems basics (CAP theorem)"],
+    "key_features": [
+      "Complete Raft consensus implementation: Leader Election, Heartbeats, and Log Replication",
+      "gRPC interface for low-latency node-to-node communication",
+      "Strong consistency (Linearizability) guarantees for all Read/Write operations",
+      "Chaos-testing suite simulating network partitions, packet drops, and node kills",
+      "Live cluster health monitoring dashboard displaying leader state and replication lag"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Node State Machine", "description": "Implement Follower, Candidate, and Leader states with randomized election timers."},
+      {"step": 2, "title": "RPC Protocol & Heartbeats", "description": "Define protobuf specs for RequestVote and AppendEntries RPC calls."},
+      {"step": 3, "title": "Log Replication & Commit Index", "description": "Implement log entries, term checking, and quorum commit consensus."},
+      {"step": 4, "title": "Snapshotting & Compaction", "description": "Add memory snapshotting to truncate committed logs and recover slow followers."},
+      {"step": 5, "title": "Web Cluster Explorer", "description": "Stream node metrics to an HTML/CSS dashboard visualizing live cluster topology."}
+    ],
+    "portfolio_impact": "The ultimate benchmark project for top-tier systems engineering, backend infrastructure, and cloud roles.",
+    "tags": ["distributed-systems", "raft", "go", "grpc", "docker", "consensus", "storage"]
+  },
+  {
+    "id": "kafka-spark-stream-analytics",
+    "title": "Real-Time Big Data Clickstream & Anomaly Pipeline",
+    "tagline": "End-to-end streaming data pipeline ingesting millions of events per second with Apache Kafka, Spark, and PostgreSQL.",
+    "description": "A big data engineering project that simulates millions of user clickstream events, buffers them through Apache Kafka topics, runs windowed aggregation and fraud anomaly detection in Apache Spark Streaming, and writes to an indexed PostgreSQL data warehouse with a live monitoring dashboard.",
+    "academic_backgrounds": ["Data Science & AI", "Computer Science", "Information Technology"],
+    "domains": ["Data Science & Analytics", "Cloud & Distributed Systems", "Data Engineering"],
+    "tech_stack": ["Python", "Apache Kafka", "Apache Spark", "PostgreSQL", "Docker", "Flask", "HTML", "CSS"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "5-7 weeks",
+    "prerequisites": ["Event streaming architectures", "SQL & relational schema design", "Docker Compose multi-container setup"],
+    "key_features": [
+      "High-throughput synthetic event generator simulating realistic user e-commerce interactions",
+      "Partitioned Apache Kafka message broker handling consumer groups with backpressure management",
+      "Structured streaming transformations computing rolling 5-minute conversion rates and bounce rates",
+      "PostgreSQL time-series database with automated partitioning",
+      "Live streaming web dashboard rendering real-time throughput velocity and anomaly alerts"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Event Producer & Kafka Setup", "description": "Set up multi-broker Kafka cluster in Docker and write asynchronous Python event generators."},
+      {"step": 2, "title": "Spark Streaming Engine", "description": "Write PySpark streaming job to ingest from Kafka and perform tumbling window aggregations."},
+      {"step": 3, "title": "Database Storage & Sink", "description": "Persist aggregated metrics into PostgreSQL with optimized compound indexes."},
+      {"step": 4, "title": "Flask Analytics Dashboard", "description": "Serve live metric endpoints to an HTML/CSS dashboard with auto-updating chart widgets."},
+      {"step": 5, "title": "Benchmarking & Tuning", "description": "Profile consumer lag, consumer offset commits, and optimize Spark micro-batch intervals."}
+    ],
+    "portfolio_impact": "Directly targets high-paying Data Engineering and Big Data Infrastructure roles at tech enterprises.",
+    "tags": ["kafka", "spark", "big-data", "data-engineering", "postgresql", "streaming", "docker"]
+  },
+  {
+    "id": "fullstack-react-fastapi-saas",
+    "title": "Modern Full-Stack Task & Project Management SaaS",
+    "tagline": "Production-grade productivity app with React, FastAPI, Tailwind CSS, PostgreSQL, and asynchronous background tasks with Celery.",
+    "description": "A modern Trello/Linear-style project management platform featuring interactive Kanban boards, JWT authentication, drag-and-drop task reordering, PostgreSQL relational models, Redis caching, and asynchronous email notification queues with Celery.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Software Engineering"],
+    "domains": ["Web Development", "Productivity & Collaboration", "Enterprise Software"],
+    "tech_stack": ["React", "TypeScript", "FastAPI", "Python", "Tailwind CSS", "PostgreSQL", "Redis", "Celery", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "4-6 weeks",
+    "prerequisites": ["RESTful API design with FastAPI", "React components & state management (Hooks/Context)", "Relational database modeling"],
+    "key_features": [
+      "Modern responsive Kanban board with smooth HTML5 drag-and-drop column transitions",
+      "JWT access and refresh token authentication with role-based team permissions",
+      "FastAPI asynchronous backend with automatic OpenAPI (Swagger) documentation",
+      "Redis caching layer reducing database queries by 80% on read-heavy dashboards",
+      "Asynchronous email notification queue using Celery and Redis workers"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Database Schema & API Specs", "description": "Design PostgreSQL schema for users, workspaces, boards, columns, and cards with SQLAlchemy."},
+      {"step": 2, "title": "FastAPI Core Services", "description": "Implement authentication, board CRUD, and activity logging endpoints."},
+      {"step": 3, "title": "React & Tailwind Frontend", "description": "Build responsive UI components: modal dialogs, drag-and-drop boards, and team invites."},
+      {"step": 4, "title": "Background Queues with Celery", "description": "Offload digest emails and heavy exports to asynchronous Celery workers."},
+      {"step": 5, "title": "Dockerization & Deployment", "description": "Containerize frontend, backend, PostgreSQL, and Redis with Docker Compose."}
+    ],
+    "portfolio_impact": "The definitive modern full-stack web application showcasing the industry-standard React + FastAPI + PostgreSQL stack.",
+    "tags": ["react", "fastapi", "typescript", "tailwind", "postgresql", "redis", "celery", "fullstack"]
+  },
+  {
+    "id": "cross-platform-flutter-eco-tracker",
+    "title": "Cross-Platform Mobile Carbon Footprint & Habit Tracker",
+    "tagline": "Mobile app built with Flutter and Firebase tracking daily commuting, dietary, and energy footprints with gamified milestones.",
+    "description": "A cross-platform mobile application engineered with Flutter/Dart. Tracks daily transport, diet, and utility usage, calculates personal CO2 emissions, rewards eco-friendly habit streaks, and synchronizes real-time user profiles with Firebase Firestore.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Environmental Science"],
+    "domains": ["Mobile Development", "Green Tech & Sustainability", "Human-Computer Interaction (HCI)"],
+    "tech_stack": ["Flutter", "Dart", "Firebase", "Python", "REST API", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "3-5 weeks",
+    "prerequisites": ["Flutter & Dart object-oriented programming", "State management (Provider / Riverpod)", "Firebase authentication & Firestore"],
+    "key_features": [
+      "Cross-platform compilation to iOS and Android from a single shared codebase",
+      "Interactive carbon calculator modeling transit modes (electric vehicle, subway, biking, flying)",
+      "Daily habit streak tracker with push notifications and celebration animations",
+      "Community leaderboard comparing neighborhood carbon reduction scores",
+      "Companion web portal built with HTML/CSS for administrative analytics"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Mobile UI & State Architecture", "description": "Design sleek mobile screens in Flutter using Material 3 design and Riverpod state management."},
+      {"step": 2, "title": "Carbon Accounting Logic", "description": "Implement EPA emission factor formulas for electricity, gasoline, and dietary choices."},
+      {"step": 3, "title": "Firebase Integration", "description": "Wire Google Sign-In, Firestore real-time synchronization, and offline cache persistence."},
+      {"step": 4, "title": "Gamification & Badges", "description": "Add habit achievement badges, streak counters, and weekly goal summaries."},
+      {"step": 5, "title": "Admin Dashboard", "description": "Build an HTML/CSS companion dashboard displaying aggregated anonymous sustainability trends."}
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Mobile Wireframing", "description": "Build Flutter UI with Material 3 styling and custom animations."},
+      {"step": 2, "title": "Emissions Modeling", "description": "Code carbon calculation algorithms based on validated climate datasets."},
+      {"step": 3, "title": "Backend Sync", "description": "Connect Firebase Firestore for instant multi-device syncing."},
+      {"step": 4, "title": "Habit Mechanics", "description": "Implement streak algorithms and push notification reminders."},
+      {"step": 5, "title": "Web Dashboard", "description": "Create an HTML/CSS portal to visualize community energy savings."}
+    ],
+    "portfolio_impact": "Proves mobile engineering capability and user empathy in the rapidly growing climate tech ecosystem.",
+    "tags": ["flutter", "dart", "mobile", "firebase", "sustainability", "cross-platform"]
+  },
+  {
+    "id": "cloud-native-k8s-canary-controller",
+    "title": "Cloud-Native Kubernetes Canary Deployment Controller",
+    "tagline": "DevOps tool automating blue-green and progressive canary rollouts based on real-time Prometheus error rate metrics.",
+    "description": "An advanced cloud-native DevOps controller that integrates with Kubernetes and Prometheus. Manages progressive application rollouts (e.g. routing 10% traffic to v2), monitors HTTP error rates and latency in real time, and triggers automatic rollbacks if error thresholds exceed 1%.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Cloud & DevOps"],
+    "domains": ["Cloud & DevOps", "Systems & Infrastructure", "Site Reliability Engineering (SRE)"],
+    "tech_stack": ["Kubernetes", "Docker", "Terraform", "Python", "Prometheus", "Helm", "HTML", "CSS"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "5-7 weeks",
+    "prerequisites": ["Kubernetes primitives (Deployments, Services, Ingress, Pods)", "Container image builds with Docker", "Prometheus PromQL queries"],
+    "key_features": [
+      "Automated canary traffic splitting shifting traffic progressively (10% -> 25% -> 50% -> 100%)",
+      "Prometheus metric analyzer evaluating HTTP 5xx rates and p99 latency against baseline",
+      "Zero-downtime automatic rollback within 15 seconds if anomalies are detected",
+      "Infrastructure-as-Code Terraform configurations provisioning reproducible local Minikube/K8s clusters",
+      "Web rollout inspector dashboard displaying real-time traffic split gauges and rollback history"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "K8s Cluster & Ingress Setup", "description": "Configure Minikube/Kind cluster with NGINX Ingress controller supporting canary annotations."},
+      {"step": 2, "title": "Metric Pipeline", "description": "Deploy Prometheus and configure service monitors to track ingress request rates and HTTP status codes."},
+      {"step": 3, "title": "Python Canary Controller", "description": "Write controller logic polling Prometheus metrics and adjusting ingress traffic percentages dynamically."},
+      {"step": 4, "title": "Automated Rollback Engine", "description": "Implement fail-safe rollback state machine tearing down canary pods on breach."},
+      {"step": 5, "title": "Web Ops Dashboard", "description": "Build an HTML/CSS control center to visualize live traffic distribution and trigger manual overrides."}
+    ],
+    "portfolio_impact": "Demonstrates tier-one Site Reliability Engineering (SRE) and cloud-native Kubernetes automation skills.",
+    "tags": ["kubernetes", "docker", "devops", "sre", "prometheus", "terraform", "cloud-native"]
+  },
+  {
+    "id": "decentralized-micro-lending-solidity",
+    "title": "Decentralized P2P Micro-Lending & Escrow Protocol",
+    "tagline": "Web3 smart contract lending pool with algorithmic collateral ratios, automated interest accrual, and liquidations.",
+    "description": "A decentralized finance (DeFi) application built on Ethereum. Lenders supply ERC-20 stablecoins to earn interest; borrowers lock cryptocurrency collateral to withdraw loans. Smart contracts autonomously calculate compounding interest rates, health factors, and execute automated liquidations if collateral drops.",
+    "academic_backgrounds": ["Computer Science", "Finance & Economics", "Information Security"],
+    "domains": ["Blockchain & Web3", "FinTech", "Applied Cryptography"],
+    "tech_stack": ["Solidity", "Python", "WebSockets", "Flask", "HTML", "CSS", "JavaScript"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "5-6 weeks",
+    "prerequisites": ["Solidity syntax & EVM execution model", "ERC-20 token standard", "Web3 contract interactions (web3.py or ethers.js)"],
+    "key_features": [
+      "Audited Solidity smart contract managing deposit pools, borrowing caps, and liquidation thresholds",
+      "Dynamic interest rate model scaling APY based on pool capital utilization rate",
+      "Automated liquidation mechanism protecting lender solvency when borrower health factor drops below 1.0",
+      "ReentrancyGuard and OpenZeppelin security best practices preventing flash-loan exploits",
+      "Modern Web3 interface with wallet connection, collateral health dials, and deposit/repay forms"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Smart Contract Architecture", "description": "Write LendingPool.sol enforcing deposit, borrow, repay, and liquidation math in Solidity."},
+      {"step": 2, "title": "Unit Testing & Hardhat", "description": "Test contract edge cases, reentrancy protection, and oracle price feed updates."},
+      {"step": 3, "title": "Web3 Backend Interface", "description": "Build Python web3.py integration service reading contract events and state logs."},
+      {"step": 4, "title": "DeFi Dashboard UI", "description": "Create an HTML/CSS dashboard with wallet connection modal, loan health factor gauges, and pool stats."},
+      {"step": 5, "title": "Liquidation Bot Simulation", "description": "Implement an automated arbitrage bot that monitors and executes liquidations on insolvent loans."}
+    ],
+    "portfolio_impact": "Gold standard proof of smart contract security, decentralized economics, and Web3 engineering.",
+    "tags": ["solidity", "blockchain", "defi", "web3", "smart-contracts", "ethereum", "fintech"]
+  },
+  {
+    "id": "network-packet-sniffer-ids",
+    "title": "Network Intrusion Detection System & Packet Sniffer",
+    "tagline": "Cybersecurity packet analyzer capturing promiscuous LAN traffic, detecting port scans, ARP spoofing, and DDoS floods.",
+    "description": "A cybersecurity surveillance tool built with Python, Scapy, and Linux raw sockets. Sniffs live network interfaces, decodes Ethernet, IP, TCP, and UDP headers, detects malicious signatures (SYN flood DDoS, ARP poisoning, Nmap stealth scans), and displays packet waterfalls on a real-time web console.",
+    "academic_backgrounds": ["Computer Science", "Cybersecurity & Information Security", "Information Technology", "Computer Networks"],
+    "domains": ["Cybersecurity", "Network Security", "DevSecOps"],
+    "tech_stack": ["Python", "Scapy", "Wireshark", "Linux", "Flask", "SQLite", "HTML", "CSS"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "4-5 weeks",
+    "prerequisites": ["OSI 7-layer model & TCP/IP stack", "Raw sockets & packet headers", "Common network attacks (ARP spoofing, SYN flood)"],
+    "key_features": [
+      "Real-time packet sniffer capturing live frames across Wi-Fi or Ethernet interfaces",
+      "Deep Packet Inspection (DPI) dissecting IP, TCP, UDP, DNS, and HTTP payloads",
+      "Heuristic threat detector identifying port scanning sweeps, ARP poisoning, and high-volume floods",
+      "PCAP export compatibility allowing recorded captures to be opened in Wireshark",
+      "Interactive SOC security dashboard with live packet timeline, protocol distribution donuts, and threat alerts"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Sniffing Core", "description": "Implement multi-threaded packet capture loop using Scapy and raw socket filters."},
+      {"step": 2, "title": "Protocol Dissector", "description": "Parse packet layers to extract source/dest IPs, ports, TCP flags (SYN, ACK, FIN), and DNS queries."},
+      {"step": 3, "title": "Threat Detection Engine", "description": "Write sliding window algorithms detecting anomalous packet frequencies and duplicate ARP replies."},
+      {"step": 4, "title": "Flask Security Console", "description": "Build an HTML/CSS interface streaming live captured packet logs with color-coded severity badges."},
+      {"step": 5, "title": "PCAP Recording & Export", "description": "Add feature to record sessions and generate standard .pcap files for forensic analysis."}
+    ],
+    "portfolio_impact": "Demonstrates deep networking fundamentals, low-level packet mechanics, and defensive cybersecurity engineering.",
+    "tags": ["cybersecurity", "networking", "scapy", "wireshark", "ids", "infosec", "python"]
+  },
+  {
+    "id": "ai-fitness-pose-correction",
+    "title": "AI Fitness Pose Estimator & Workout Rep Counter",
+    "tagline": "Real-time computer vision app tracking 33 body landmarks to analyze exercise form, calculate joint angles, and count reps.",
+    "description": "An interactive AI fitness coach that uses standard webcam video streams. Detects 33 skeletal body landmarks in real time using MediaPipe, calculates joint angles (e.g., knee flexion during squats, elbow angles during bicep curls/pushups), provides corrective voice/audio form feedback, and logs workout stats.",
+    "academic_backgrounds": ["Computer Science", "Biomedical Engineering", "Information Technology", "Electronics & Communication"],
+    "domains": ["Computer Vision", "Artificial Intelligence", "Healthcare & BioTech"],
+    "tech_stack": ["Python", "OpenCV", "MediaPipe", "NumPy", "Flask", "HTML", "CSS", "JavaScript"],
+    "difficulty": "Beginner",
+    "scope": "Hackathon",
+    "estimated_duration": "2-3 weeks",
+    "prerequisites": ["OpenCV camera feed handling", "Basic 2D/3D Euclidean trigonometry", "State machine logic for rep counting"],
+    "key_features": [
+      "Real-time 33-point body skeletal pose estimation running smoothly on CPU at 30+ FPS",
+      "Trigonometric angle calculation tracking joint kinematics (e.g. knee angle for squat depth)",
+      "State-machine repetition counter distinguishing 'Up' vs 'Down' phases with hysteresis",
+      "Form correction visual overlays (green when form is correct, red when back is rounded)",
+      "Workout history dashboard displaying total volume, completed reps, and cadence consistency"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Pose Tracking Setup", "description": "Initialize OpenCV video capture and integrate MediaPipe Pose to extract body landmark coordinates."},
+      {"step": 2, "title": "Angle Calculation Math", "description": "Write trigonometric function computing angle between 3 joints (e.g. shoulder-elbow-wrist)."},
+      {"step": 3, "title": "Repetition State Machine", "description": "Build state transition logic tracking squat/curl depth to count reps accurately without double-counting."},
+      {"step": 4, "title": "Visual Overlay Engine", "description": "Draw colored skeletal lines and angle text overlays dynamically on video frames."},
+      {"step": 5, "title": "Flask Web App", "description": "Stream processed video feed to an HTML/CSS workout companion page with audio feedback."}
+    ],
+    "portfolio_impact": "An engaging, visual showcase of computer vision, human biomechanics, and consumer-facing AI.",
+    "tags": ["computer-vision", "mediapipe", "opencv", "fitness", "pose-estimation", "ai"]
+  },
+  {
+    "id": "vulnerability-scanner-security-auditor",
+    "title": "Automated Web Application Security Auditor & Recon Tool",
+    "tagline": "Multi-threaded cybersecurity tool for scanning web targets for common OWASP vulnerabilities and misconfigurations.",
+    "description": "A comprehensive security auditing application that takes a domain or IP, performs passive and active reconnaissance (subdomain enumeration, port scanning, SSL inspection), tests for OWASP Top 10 vulnerabilities (SQLi, XSS, open redirects), and produces vulnerability reports.",
+    "academic_backgrounds": ["Computer Science", "Cybersecurity & Information Security", "Information Technology"],
+    "domains": ["Cybersecurity", "Network Security", "DevSecOps"],
+    "tech_stack": ["Python", "Flask", "HTML", "CSS", "Socket Programming", "BeautifulSoup", "Linux"],
+    "difficulty": "Intermediate",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "4-5 weeks",
+    "prerequisites": ["HTTP protocol & header mechanics", "OWASP Top 10 concepts", "Socket programming in Python"],
+    "key_features": [
+      "Concurrent port scanner and banner grabber with service version detection",
+      "Subdomain discovery through Certificate Transparency logs and DNS brute-forcing",
+      "Automated payload injectors for Reflected XSS, SQL injection error heuristics, and directory traversal",
+      "SSL/TLS certificate validator checking cipher suites, expiry, and handshake flaws",
+      "Executive security report generation with CVSS risk scoring and mitigation guidance"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Network Reconnaissance Module", "description": "Implement multi-threaded TCP SYN/Connect port scanner and HTTP header analyzer."},
+      {"step": 2, "title": "Vulnerability Heuristics Engine", "description": "Write safe fuzzing rules targeting common injection vectors, path traversals, and missing security headers."},
+      {"step": 3, "title": "Subdomain & Asset Discovery", "description": "Query crt.sh API and DNS records to map the target's attack surface."},
+      {"step": 4, "title": "Flask Vulnerability Dashboard", "description": "Build a responsive web application to launch scans, monitor real-time scan progress, and view risk scores."},
+      {"step": 5, "title": "Report Generator", "description": "Generate downloadable HTML/PDF audit summaries with severity matrices (Critical, High, Med, Low)."}
+    ],
+    "portfolio_impact": "Proves deep practical understanding of security principles, ethical hacking methodology, and defensive web engineering.",
+    "tags": ["cybersecurity", "infosec", "owasp", "reconnaissance", "penetration-testing", "python"]
+  },
+  {
+    "id": "personal-finance-expense-tracker-insights",
+    "title": "Smart Personal Finance Tracker & Budgeting Engine",
+    "tagline": "Full-stack personal finance web app with automated bank statement parsing, categorization, and predictive cash-flow forecasting.",
+    "description": "A clean, modern financial wellness platform where users track expenses, upload CSV/PDF bank statements for automated categorization using rule-based and machine-learning classifiers, set monthly budgets, and visualize savings targets.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Business & Finance", "General STEM"],
+    "domains": ["Web Development", "FinTech", "Data Science & Analytics"],
+    "tech_stack": ["Python", "Flask", "SQLite", "HTML", "CSS", "JavaScript", "Pandas"],
+    "difficulty": "Beginner",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "2-3 weeks",
+    "prerequisites": ["Basic Python & Flask", "HTML5 & CSS3 layout", "Basic SQL queries"],
+    "key_features": [
+      "CSV & statement import parser with automated transaction categorization (Groceries, Utilities, Entertainment, etc.)",
+      "Interactive expense breakdown donuts and monthly cash-flow burn rate charts",
+      "Flexible recurring subscription tracker alerting upcoming due dates",
+      "Budget goal progress bars with threshold alerts when nearing budget caps",
+      "Secure user authentication with password hashing and session management"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Database Schema Design", "description": "Model users, accounts, categories, transactions, and budget targets in SQLite."},
+      {"step": 2, "title": "Authentication & CRUD", "description": "Build login, registration, and manual transaction entry routes with Flask."},
+      {"step": 3, "title": "Statement Ingestion Engine", "description": "Write a Python parser that cleans CSV statements and applies regex and keyword matching for categories."},
+      {"step": 4, "title": "Dashboard UI & Charts", "description": "Create an aesthetically pleasing HTML/CSS layout with animated progress bars and financial summaries."},
+      {"step": 5, "title": "Analytics & Forecasting", "description": "Compute average daily spending rates to project end-of-month account balance."}
+    ],
+    "portfolio_impact": "A polished, immediately usable everyday application showing solid full-stack engineering and UX craftsmanship.",
+    "tags": ["finance", "fullstack", "flask", "sqlite", "webdev", "analytics"]
+  },
+  {
+    "id": "autonomous-robot-slam-pathfinding",
+    "title": "Autonomous Mobile Robot Simulator with SLAM & A* Navigation",
+    "tagline": "2D robotics simulator implementing Simultaneous Localization and Mapping (SLAM) and optimal obstacle-avoidance pathfinding.",
+    "description": "A robotics software project simulating a differential-drive robot in unknown 2D environments. The robot utilizes simulated LiDAR ray-casting to construct an occupancy grid map in real-time, estimates its pose using particle filter localization, and plans collision-free paths using A* and Dynamic Window Approach (DWA).",
+    "academic_backgrounds": ["Mechatronics & Robotics", "Electrical & Electronics", "Mechanical Engineering", "Computer Science"],
+    "domains": ["Robotics & Automation", "Autonomous Systems", "Algorithms & Simulation"],
+    "tech_stack": ["Python", "NumPy", "Matplotlib", "ROS 2", "C++", "HTML", "CSS", "Flask"],
+    "difficulty": "Advanced",
+    "scope": "Capstone Project",
+    "estimated_duration": "6-8 weeks",
+    "prerequisites": ["Matrix algebra & kinematic equations", "Graph search algorithms (A*, Dijkstra)", "Python object-oriented programming"],
+    "key_features": [
+      "Simulated differential drive robot kinematics with noise injection",
+      "Ray-casted 2D LiDAR range sensor generating continuous laser distance beams",
+      "Occupancy Grid Mapping updating cell probabilities via log-odds formulation",
+      "A* path planner computing optimal waypoint trajectory avoiding dynamic obstacles",
+      "Browser-based interactive simulation canvas allowing users to draw custom maze obstacles"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Kinematic & Sensor Simulator", "description": "Implement differential drive motion model and simulate 360-degree LiDAR ray-box intersections."},
+      {"step": 2, "title": "Occupancy Grid SLAM", "description": "Build an occupancy grid updater mapping unknown, free, and occupied spaces from sensor logs."},
+      {"step": 3, "title": "Global Path Planning", "description": "Implement 8-connected grid A* pathfinding with Euclidean distance heuristics."},
+      {"step": 4, "title": "Local Obstacle Avoidance", "description": "Incorporate Dynamic Window Approach (DWA) for smooth velocity and steering angle commands."},
+      {"step": 5, "title": "Interactive Web Visualizer", "description": "Expose simulation frames via Flask streaming to an interactive HTML5 canvas."}
+    ],
+    "portfolio_impact": "Crucial standout demonstration for robotics software engineers, autonomous vehicle firms, and motion planning research.",
+    "tags": ["robotics", "slam", "pathfinding", "a-star", "simulation", "mechatronics", "ros-2"]
+  },
+  {
+    "id": "fake-news-misinformation-detector",
+    "title": "Multimodal Misinformation & Fake News Detector",
+    "tagline": "NLP text credibility classifier and fact-checking tool analyzing linguistic sentiment, sensationalism, and source veracity.",
+    "description": "An AI-powered web tool that evaluates online articles and social media posts for clickbait, sensationalist headlines, and misinformation. Uses TF-IDF + ensemble machine learning models trained on benchmark fact-checking datasets, paired with entity verification.",
+    "academic_backgrounds": ["Computer Science", "Data Science & AI", "Journalism & Media Studies", "Information Technology"],
+    "domains": ["Natural Language Processing", "Machine Learning", "Social Computing"],
+    "tech_stack": ["Python", "Scikit-Learn", "NLTK", "Flask", "HTML", "CSS", "Pandas"],
+    "difficulty": "Beginner",
+    "scope": "Hackathon",
+    "estimated_duration": "2-3 weeks",
+    "prerequisites": ["Text preprocessing (stemming, tokenization, stop-words)", "Supervised classification (Logistic Regression, Random Forest)", "Basic HTML/CSS forms"],
+    "key_features": [
+      "Credibility score gauge (0-100%) indicating factual integrity vs sensationalism",
+      "Emotional tone and subjective bias analysis highlighting manipulative language",
+      "Headline-to-body stance consistency checker detecting deceptive clickbait",
+      "URL article scraper automatically extracting title and article content for instant analysis",
+      "Visual badge breakdown of linguistic indicators (passive voice, uppercase shouting, exclamation density)"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Corpus Assembly & Cleaning", "description": "Merge LIAR and ISOT Fake News datasets; perform text normalization, lowercasing, and lemmatization."},
+      {"step": 2, "title": "Feature Engineering", "description": "Compute TF-IDF n-grams, sentiment polarity, readability scores, and punctuation statistics."},
+      {"step": 3, "title": "Model Training & Calibration", "description": "Train and evaluate Logistic Regression, Linear SVM, and Naive Bayes; tune hyperparameters."},
+      {"step": 4, "title": "Web Scraper & API", "description": "Build newspaper/BeautifulSoup scraper fetching article contents from submitted URLs."},
+      {"step": 5, "title": "Interactive Frontend", "description": "Design an intuitive HTML/CSS interface with credibility badges, highlighted sensationalist tokens, and result sharing."}
+    ],
+    "portfolio_impact": "Demonstrates practical machine learning, text feature engineering, and ethical AI for digital literacy.",
+    "tags": ["nlp", "fake-news", "machine-learning", "scikit-learn", "text-classification", "flask"]
+  },
+  {
+    "id": "smart-resume-matcher-ats-optimizer",
+    "title": "AI Resume Parser & ATS Match Score Optimizer",
+    "tagline": "Career tool parsing resumes against job descriptions to compute ATS compatibility, missing skills, and formatting feedback.",
+    "description": "An applicant tracking system (ATS) simulator and resume optimization platform. Ingests PDF/DOCX resumes and target job descriptions, extracts skills, experience, and educational qualifications, computes lexical & semantic alignment scores, and provides specific suggestions to improve candidate ranking.",
+    "academic_backgrounds": ["Computer Science", "Information Technology", "Business & HR Analytics", "Data Science & AI"],
+    "domains": ["Natural Language Processing", "Web Development", "Productivity & Career Tech"],
+    "tech_stack": ["Python", "Flask", "NLTK", "Scikit-Learn", "HTML", "CSS", "JavaScript", "Pandas"],
+    "difficulty": "Beginner",
+    "scope": "Portfolio Booster",
+    "estimated_duration": "2-3 weeks",
+    "prerequisites": ["Text vectorization (TF-IDF)", "PDF text extraction (pypdf/pdfminer)", "Flask file uploads and form handling"],
+    "key_features": [
+      "Robust PDF/DOCX resume text parser extracting contact info, skills, education, and work history sections",
+      "Comprehensive technology & domain skill taxonomy matching 500+ technical keywords",
+      "Match Score Calculator providing overall ATS percentage match and skill gap breakdown",
+      "Missing keywords checklist highlighting mandatory job requirements absent from the resume",
+      "Interactive resume preview with highlighted skill badges and downloadable audit report"
+    ],
+    "roadmap": [
+      {"step": 1, "title": "Document Ingestion Engine", "description": "Extract plain text from uploaded PDF/Word resumes and clean unicode whitespace."},
+      {"step": 2, "title": "Skill Extraction Taxonomy", "description": "Build a normalized dictionary of tech stacks, frameworks, tools, and soft skills with regex extraction."},
+      {"step": 3, "title": "Match Scoring Algorithm", "description": "Compute Jaccard skill overlap and TF-IDF cosine similarity between resume and job description."},
+      {"step": 4, "title": "Recommendation Engine", "description": "Generate concrete bullet-point suggestions to improve wording, action verbs, and missing requirements."},
+      {"step": 5, "title": "Modern Frontend Dashboard", "description": "Design an HTML/CSS interface with match score gauges, missing skill pills, and side-by-side comparison."}
+    ],
+    "portfolio_impact": "Directly usable by thousands of fellow students and job-seekers, proving practical product thinking and NLP skills.",
+    "tags": ["ats", "resume", "nlp", "career", "scikit-learn", "webdev", "productivity"]
+  }
+]
